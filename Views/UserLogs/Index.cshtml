@@ -1,0 +1,90 @@
+﻿@model IEnumerable<UserLog>
+
+@{
+    ViewData["Title"] = "Index";
+}
+
+<h2>User Log</h2>
+<table class="table">
+    <thead>
+        <tr>
+            <th>Date</th>
+            <th>Total User</th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr>
+            <th>@DateTime.Now.ToShortDateString()</th>
+            <th>@Model.Count()</th>
+        </tr>
+    </tbody>
+</table>
+<hr />
+
+<table class="table">
+    <thead>
+        <tr>
+            <th>
+                User Id
+            </th>
+            <th>
+                User Name
+            </th>
+            <th>
+                Login Date
+            </th>
+            <th>
+                Time
+            </th>
+            <th>
+                IP Address
+            </th>
+            <th>
+                Page Visited
+            </th>
+            <th>
+                Controller Name
+            </th>
+            <th>
+                Action Performed
+            </th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var item in Model)
+        {
+            <tr>
+                <td>
+                    @Html.DisplayFor(modelItem => item.user_id)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.user_name)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.login_date)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.login_time)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.ip_address)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.page_name)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.controller)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.http_verb)
+                </td>
+                <td>
+                    @Html.ActionLink("Edit", "Edit", new { /* id=item.PrimaryKey */ }) |
+                    @Html.ActionLink("Details", "Details", new { /* id=item.PrimaryKey */ }) |
+                    @Html.ActionLink("Delete", "Delete", new { /* id=item.PrimaryKey */ })
+                </td>
+            </tr>
+        }
+    </tbody>
+</table>

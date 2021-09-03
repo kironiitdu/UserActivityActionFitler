@@ -1,0 +1,13 @@
+﻿CREATE TABLE [dbo].[UserLog](
+[ulogo_id] [bigint] PRIMARY KEY IDENTITY(1,1) NOT NULL,
+[user_id] [bigint] NULL,
+[login_time] [nvarchar](100) NULL,
+[login_date] [datetime] NULL,
+[ip_address] [nvarchar](100) NULL,
+[page_name] [nvarchar](100) NULL,
+[logout_time] [time](7) NULL,
+[logout_date] [datetime] NULL,
+[user_name] [nvarchar](50) NULL,
+[controller] [nvarchar](50) NULL,
+[http_verb] [nvarchar](50) NULL,
+)

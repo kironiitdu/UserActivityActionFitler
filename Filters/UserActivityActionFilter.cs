@@ -17,9 +17,9 @@ namespace UserActivityLog.Filters
         {
             Random rnd = new Random();
             int randomUser = rnd.Next(1, 13);
-
+            //Get user clamin
             var user = context.HttpContext.User.Claims;
-            var remoteIP = context.HttpContext.Connection.RemoteIpAddress;
+            var remoteIP = context.HttpContext.Connection.RemoteIpAddress; // I need to get the IP as well.
             var localIP = context.HttpContext.Connection.LocalIpAddress;
             //Get Your Page Information
             var request = context.HttpContext.Request;

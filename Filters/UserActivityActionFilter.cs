@@ -31,7 +31,7 @@ namespace UserActivityLog.Filters
             //Database Operation Context
             var _dbContext = context.HttpContext.RequestServices.GetRequiredService<UserActivityLogContext>();
             var userLog = new UserLog();
-            userLog.user_id = randomUser;
+            userLog.user_id = randomUser;//Here I am testing with random user, in case of authentic user need to pull user information from claims
             userLog.user_name = "User :" + randomUser;
             userLog.login_date = DateTime.Now;
             userLog.login_time = DateTime.Now.ToString("HH:mm:ss tt");
